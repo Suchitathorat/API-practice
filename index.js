@@ -6,6 +6,8 @@ app.use(express.json());
 const   PORT = 5000;
 
 
+
+// API using query parammeter
 app.get("/order/food",(req,res)=>{
     const{menu,quantity}=req.query;
    
@@ -21,6 +23,7 @@ app.get("/order/food",(req,res)=>{
 
 
 
+// API using header parammeter
 app.get("/user/info",(req,res)=>{
     const{user,country}=req.headers;
 
@@ -34,7 +37,7 @@ app.get("/user/info",(req,res)=>{
 
 
 
-
+// API using path parammeter
 app.get ("/food/:type" , ( req,res)=>{
 
     const{type}=req.params;
@@ -54,7 +57,7 @@ app.get ("/food/:type" , ( req,res)=>{
 
 
 
-
+// API using body parammeter
 app.post('/user/age' ,(req,res)=>{
     const{name ,age}=(req.body);
 
